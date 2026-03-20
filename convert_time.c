@@ -1,3 +1,7 @@
+/*
+    Input seconds, output the format: days: x hours: y seconds: z
+*/
+
 #include <stdio.h>
 
 int main(){
