@@ -1,4 +1,5 @@
 #include<stdio.h>
+// #include<utils/loops/loops.h>
 
 void display(){
     printf("Display the first N natural numbers: ");
@@ -21,7 +22,47 @@ double power_ex(){
     unsigned n;
     printf("exponent: ");
     scanf("%u", &n);
-    for (int i = 1; i<=n; i++){
+    for (int i = 1; i<=n; i++){/*
+Write a program that calculates the first n prime numbers, 
+where n is a positive integer specified by the user.
+For example, if n is 6 then the output is:
+2 3 5 7 11 13
+*/
+
+int is_prime(unsigned n){
+    if (n<2){
+        return 0;
+    }
+    else if (n==2){
+        return 1;
+    }
+    
+    for (int i=3; i<=n/2;i++){
+        if (n%i == 0){
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+
+void prime(){
+    printf("N prime numbers: ");
+    int n;
+    scanf("%d", &n);
+
+    int count=0, number = 2;
+
+    while (count < n)
+    {
+        if (is_prime(number)){
+            printf("%d ", number);
+            count ++;
+        }
+        number ++;
+    }
+}
         power *= b;
     }
     printf("%f^%d = %f", b, n, power);
@@ -104,43 +145,6 @@ void increase(){
 }
 
 /*
-Write a program that calculates the first n prime numbers, 
-where n is a positive integer specified by the user.
-For example, if n is 6 then the output is:
-2 3 5 7 11 13
-*/
-#include <stdbool.h>
-bool is_prime(unsigned n){
-    bool flag = true;
-    for (int i=2; i<=n/2;i++){
-        if (n%i == 0){
-            flag = false;
-            break;
-        }
-    }
-    return flag;
-}
-
-
-void prime(){
-    printf("N prime numbers: ");
-    int n;
-    scanf("%d", &n);
-
-    int count=0, number = 2;
-    bool stop = false;
-
-    while (count < n)
-    {
-        if (is_prime(number)){
-            printf("%d ", number);
-            count ++;
-        }
-        number ++;
-    }
-}
-
-/*
 Write a program that draws a "triangle" of size n, where n is a positive integer specified by the user.
 For example, if n is 3 then the output is:
 */
@@ -194,15 +198,64 @@ void grid(){
     }
 }
 
+/*
+Write a program that calculates the first n prime numbers, 
+where n is a positive integer specified by the user.
+For example, if n is 6 then the output is:
+2 3 5 7 11 13
+*/
+
+int is_prime(unsigned n){
+    
+    if (n<2){
+        return 0;
+    }
+    else if (n==2){
+        return 1;
+    }
+    else if (n%2==0){
+        return 1;
+    }
+
+    for (int i=3; i<=n/i; i+=2){
+        if (n%i == 0){
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+// a is prime if cannot be divided by a number <= square root of a
+
+
+void prime(){
+    printf("N prime numbers: ");
+    int n;
+    scanf("%d", &n);
+
+    int count=0, number = 2;
+
+    while (count < n)
+    {
+        if (is_prime(number)){
+            printf("%d ", number);
+            count ++;
+        }
+        number ++;
+    }
+    printf("\n");
+}
+
 int main(){
     // power_ex();
     // cubes();
     // fibonacci();
     // increase();
     // printf("%d", is_prime(2));
-    // prime();
+    prime();
     // triangle();
-    grid();
+    // grid();
     return 0;
 }
 
