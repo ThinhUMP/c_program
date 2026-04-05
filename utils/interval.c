@@ -4,7 +4,7 @@ Ex: [1,5] and [5,10] are disjoint
 */
 #include <stdio.h>
 
-int main(){
+int interval(void){
     printf("First interval:\n");
     int begin1, end1;
     scanf("%d %d", &begin1, &end1);

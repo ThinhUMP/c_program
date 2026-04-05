@@ -6,8 +6,7 @@ print any monotone subsequence on a different row. For example, if the input seq
 1 0 2 4 34 8 9 10 -1
 then the output is
 1
-0
-2 4 34
+0 2 4 34
 8 9 10
 */
 
@@ -24,7 +23,7 @@ void monotone_1(){
     }
 }
 
-void monotone_2() {
+void monotone(void) {
     int x, previous=-1;
 
     while (scanf("%d", &x) == 1 && x >= 0) {
@@ -44,10 +43,4 @@ void input_seq(){
         printf("%d ", x);
         scanf("%d", &x);
     }
-}
-
-int main(){
-    monotone_2();
-    // input_seq();
-    return 0;
 }

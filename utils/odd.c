@@ -3,7 +3,7 @@
     Calculate the sum of first N odd number. N is the value entered by the user
 */
 
-void odd(){
+void odd(void){
     printf("Input the number of first N odd numbers: ");
     int N;
     scanf("%d", &N);
@@ -29,9 +29,4 @@ void odd(){
     printf("1. Sum of first %d odd numbers: %d\n", N, sum1);
     printf("2. Sum of first %d odd numbers: %d\n", N, sum2);
     printf("3. Sum of first odd numbers less than %d: %d\n", N, sum3);
-}
-
-int main(){
-    odd();
-    return 0;
 }

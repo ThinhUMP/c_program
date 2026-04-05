@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-int main(){
+int convert_time(void){
     printf("Input seconds\n");
     int seconds;
     scanf("%d", &seconds);

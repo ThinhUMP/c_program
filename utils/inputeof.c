@@ -1,12 +1,8 @@
 // C program to read input until EOF using scanf()
 #include <stdio.h>
-#include <string.h>
-// Maximum length of input line
-#define MAX_LENGTH 1000
+// #include <string.h>
 
-#include <stdio.h>
-
-int main()
+int inputeof(void)
 {
     // Variable to store each number read
     int num;

@@ -1,13 +1,9 @@
 #include<stdio.h>
 
-double power(double b, unsigned n);
-
-
-
 int change(int x){
     x = 10;
     return x;
-}
+} // remember that we can not modify x directly
 
 // define these functions
 
@@ -61,19 +57,5 @@ int ordinal(int day, int month, int year){
         return ordinal;
     }
     
-}
-
-int main(){
-    if (!isleap(1968))
-        printf("error: 1968 is leap year\n");
-    if (daysPerMonth(2, 1968)!=29)
-        printf("error: Feb 1968 is 29 days\n");
-    if (daysPerMonth(4, 1968)!=30)
-        printf("error: Apr 1968 is 30 days\n");
-    if (validDate(31,11,1968))
-        printf("error: Nov 31 1968 is not a valid date\n");
-    if (ordinal(1,3,1968)!=61)
-        printf("error: Mar 1, 1968 is day n.61 in the year\n");
-    // printf("%f\n", power(2.5, 3));
 }
 
