@@ -11,6 +11,15 @@ int main() {
     //     printf("error: Nov 31 1968 is not a valid date\n");
     // if (ordinal(1,3,1968)!=61)
     //     printf("error: Mar 1, 1968 is day n.61 in the year\n");
-    power_ex();
+    // int a = 12, b= 15;
+    // swap(&a,&b);
+    // printf("a: %d, b: %d \n", a, b);
+
+    int arr[6]={10,20,30,40,50,60};
+    reverse(arr, 6);
+    for (int i=0; i<6; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
     return 0;
 }

@@ -47,3 +47,10 @@ void odd(void);
 #include "pow.c"
 double power(double b, unsigned n);
 
+#include "array.c"
+int array(void);
+
+#include "pointer.c"
+void swap(int *x, int *y);
+void reverse(int arr[], int size);
+
