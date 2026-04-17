@@ -53,4 +53,11 @@ int array(void);
 #include "pointer.c"
 void swap(int *x, int *y);
 void reverse(int arr[], int size);
+void reverse_pointer(int *arr, int size);
+void printMatrix(int (*m)[3], int rows);
+int sumMatrix(int (*m)[3], int rows);
+void printMatrixFlatten(int (*m)[3], int rows);
+void modifyMatrix(int (*m)[3], int rows, int row, int column, int value);
+int* minimum(int *a,int *b);
+void normalize(int *n, int *d);
 

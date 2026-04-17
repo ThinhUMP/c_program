@@ -1,5 +1,7 @@
 #include "utils/import.h"
 
+
+
 int main() {
     // if (!isleap(1968))
     //     printf("error: 1968 is leap year\n");
@@ -11,15 +13,24 @@ int main() {
     //     printf("error: Nov 31 1968 is not a valid date\n");
     // if (ordinal(1,3,1968)!=61)
     //     printf("error: Mar 1, 1968 is day n.61 in the year\n");
+    
     // int a = 12, b= 15;
     // swap(&a,&b);
     // printf("a: %d, b: %d \n", a, b);
 
-    int arr[6]={10,20,30,40,50,60};
-    reverse(arr, 6);
+    /* int arr[6]={10,20,30,40,50,60};
+    reverse_pointer(arr, 6);
     for (int i=0; i<6; i++){
         printf("%d ", arr[i]);
     }
-    printf("\n");
+    printf("\n"); */
+
+    /* int matrix[2][3] = {
+        {1,2,3},
+        {4,5,6},
+    }; */
+    int n=12, d=-48;
+    normalize(&n, &d);
+
     return 0;
 }
