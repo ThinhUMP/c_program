@@ -61,3 +61,7 @@ void modifyMatrix(int (*m)[3], int rows, int row, int column, int value);
 int* minimum(int *a,int *b);
 void normalize(int *n, int *d);
 
+#include "recursive.c"
+double power_rec(double base, unsigned n);
+double power_eff(double base, unsigned n);
+void move(unsigned n, unsigned source, unsigned dest, unsigned spare);

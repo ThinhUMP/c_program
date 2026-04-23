@@ -1,5 +1,7 @@
 #include "utils/import.h"
-
+#define SOURCE 1
+#define DEST 3
+#define SPARE 2
 
 
 int main() {
@@ -29,8 +31,19 @@ int main() {
         {1,2,3},
         {4,5,6},
     }; */
-    int n=12, d=-48;
-    normalize(&n, &d);
+    /* int n=12, d=-48;
+    normalize(&n, &d); */
+
+    /* double x;
+    unsigned n;
+    printf("base ? ");
+    scanf("%lf", &x);
+    printf("exponent ? ");
+    scanf("%u", &n);
+
+    printf("%f to the %u = %f\n", x, n, power_eff(x, n)); */
+
+    move(3, SOURCE, DEST, SPARE);
 
     return 0;
 }
