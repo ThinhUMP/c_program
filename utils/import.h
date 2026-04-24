@@ -65,3 +65,8 @@ void normalize(int *n, int *d);
 double power_rec(double base, unsigned n);
 double power_eff(double base, unsigned n);
 void move(unsigned n, unsigned source, unsigned dest, unsigned spare);
+int sumFirst(int n);
+unsigned gcd(unsigned a, unsigned b);
+void pattern(int n);
+void pattern_ite(int n);
+void pattern_2(unsigned n);

@@ -43,7 +43,7 @@ int main() {
 
     printf("%f to the %u = %f\n", x, n, power_eff(x, n)); */
 
-    move(3, SOURCE, DEST, SPARE);
+    pattern_2(0);
 
     return 0;
 }

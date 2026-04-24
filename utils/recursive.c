@@ -35,3 +35,77 @@ void move(unsigned n, unsigned source, unsigned dest, unsigned spare){
         move(n-1, spare, dest, source);
     }
 }
+
+//m-th summation of first n natural numbers
+int sumFirst(int n){
+    return n*(n+1)/2;
+}
+
+int sumMth(int n, int m){
+    if (m>1)
+        return sumFirst(sumMth(n, m-1));
+    else
+        return sumFirst(n);
+}
+
+
+//gcd
+unsigned gcd(unsigned a, unsigned b){
+    if (b>0){
+        return gcd(b, a % b);
+    }
+    else
+        return a;
+}
+
+//print a pattern (1)
+void pattern(int n){
+    if (n<=0){
+        printf("%d ", n);
+        return;
+    }
+    printf("%d ", n);
+    pattern(n-5);
+    printf("%d ", n);
+}
+
+void pattern_ite(int n){
+    int init = n;
+    
+    while (n>=0){
+        printf("%d ", n);
+        n -= 5;
+    }
+
+    if (n==0){
+        while (n<=init){
+            n += 5;
+            printf("%d ", n);
+        }
+    }
+    else
+        while (n<=init){
+            printf("%d ", n);
+            n += 5;
+        }
+}
+
+void pattern_2(unsigned n){
+    if (n==0){
+        return;
+    }
+
+    pattern_2(n-1);
+    for (int i=0;i<n;i++){
+        printf("_");
+    }
+    printf("\n");
+    pattern_2(n-1);
+}
+
+//binary numbers
+int is_binary_num(unsigned n){
+    if (n%10!=0 && n%10!=1)
+        return 0;
+    
+}

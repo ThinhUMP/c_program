@@ -24,3 +24,9 @@ sort values in ascending order or descending order from scratch
 + mergesort: recursive
 + merge: not recursive
 */
+
+/*
+given a sorted array, 
+if the index of value, we can do like the guessing number in python, find the middle => compare,
+then find the middle again
+*/
