@@ -7,3 +7,20 @@ int array(void){
     }
     return 0;
 }
+
+/*
+grades [18, 30] input, find mode
+
+int grades[max] = {0}; int grade
+while (scanf("%d", &grade) == 1 and 18<=grade=<30)
+grades[grade-18]++;
+*/
+
+/*
+sort values in ascending order or descending order from scratch
+2 solutions:
+- compare => swap
+- mergesort
++ mergesort: recursive
++ merge: not recursive
+*/
