@@ -105,7 +105,29 @@ void pattern_2(unsigned n){
 
 //binary numbers
 int is_binary_num(unsigned n){
-    if (n%10!=0 && n%10!=1)
-        return 0;
+    while (n>0){
+        unsigned digit=n%10;
+        if (digit!=0 && digit!=1)
+            return 0;
+        n = n/10;
+    }
+    return 1;
+}
+
+//binary search
+int * search(int val, int a[], int size){
+    if (size==0)
+        return NULL;
     
+    int mid = size/2;
+
+    if (a[mid]==val)
+        return &a[mid];
+    else if (val<a[mid])
+    {
+        return search(val, a, mid);
+    }
+    else{
+        return search(val, a + mid + 1, size - mid - 1);
+    }
 }

@@ -8,6 +8,46 @@ int array(void){
     return 0;
 }
 
+//Print an array with n elements
+void printElement(int a[], int size){
+    for (int i=0; i<size; i++){
+        printf("%d ", a[i]);
+    }
+}
+
+//Compute the average of elements
+double avgArr(int a[], int size){
+    int sum = 0;
+    for (int i=0; i<size; i++){
+        sum+=a[size];
+    }
+    return (sum/size);
+}
+
+//Reverse an array
+//See pointer file
+
+//Find the minimum value
+int minArr(int a[], int size){
+    int min = a[0];
+    for (int i=1; i<size; i++){
+        if (a[size]<min){
+            min = a[size];
+        }
+    }
+    return min;
+}
+
+//Work with a 2D matrix (sum all elements)
+void printArr2D(int row, int col, int a[row][col]){
+    for (int i=0; i<row; i++){
+        for (int j=0; j<col; j++){
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 /*
 grades [18, 30] input, find mode
 

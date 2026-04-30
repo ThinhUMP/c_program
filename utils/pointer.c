@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+
 // define a function that swaps two variables
 void swap(int *x, int *y){
     int temp;
@@ -25,9 +26,9 @@ void reverse_pointer(int *arr, int size){
 }
 
 //print a 2D array
-void printMatrix(int (*m)[3], int rows){
+void printMatrix(int rows, int cols, int (*m)[cols]){
     for (int i=0;i<rows;i++){
-        for (int j=0;j<3;j++){
+        for (int j=0;j<cols;j++){
             printf("%d ", *(*(m+i)+j));
         }
         printf("\n");
@@ -35,10 +36,10 @@ void printMatrix(int (*m)[3], int rows){
 }
 
 //sum a 2D array
-int sumMatrix(int (*m)[3], int rows){
+int sumMatrix(int rows, int cols, int (*m)[cols]){
     int sum = 0;
     for (int i=0;i<rows;i++){
-        for (int j=0;j<3;j++){
+        for (int j=0;j<cols;j++){
             sum += *(*(m+i)+j);
         }
     }
@@ -46,15 +47,15 @@ int sumMatrix(int (*m)[3], int rows){
 }
 
 //Access elements using flatten memory
-void printMatrixFlatten(int (*m)[3], int rows){
+void printMatrixFlatten(int rows, int cols, int (*m)[cols]){
     int *p=&m[0][0];
-    for (int i=0;i<6;i++){
+    for (int i=0;i<rows*cols;i++){
         printf("%d ", *(p+i));
     }
 }
 
 //Modify values of the matrix
-void modifyMatrix(int (*m)[3], int rows, int row, int column, int value){
+void modifyMatrix(int rows, int cols, int (*m)[cols], int row, int column, int value){
     for (int i=0;i<rows;i++){
         for (int j=0;j<3;j++){
             if ((i==row-1) && (j==column-1)){
@@ -102,6 +103,7 @@ void normalize(int *n, int *d){
     printf("%d/%d \n", *n, *d);
 }
 
+#include "helper.h"
 //the next date
 void nextDate(unsigned *month, unsigned *date, unsigned *year){
     

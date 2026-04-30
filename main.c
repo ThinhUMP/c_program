@@ -27,10 +27,10 @@ int main() {
     }
     printf("\n"); */
 
-    /* int matrix[2][3] = {
+    int matrix[2][3] = {
         {1,2,3},
         {4,5,6},
-    }; */
+    };
     /* int n=12, d=-48;
     normalize(&n, &d); */
 
@@ -42,8 +42,16 @@ int main() {
     scanf("%u", &n);
 
     printf("%f to the %u = %f\n", x, n, power_eff(x, n)); */
+    int a[] = {-9, 3, 5, 7, 9};
+    int size = 5;
 
-    pattern_2(0);
+    // int *result = search(1, a, size);
 
+    // if (result != NULL) {
+    //     printf("Found: %d\n", *result);
+    // } else {
+    //     printf("Not found\n");
+    // }
+    printMatrix(2, 3, matrix);
     return 0;
 }

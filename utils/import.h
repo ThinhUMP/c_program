@@ -49,15 +49,19 @@ double power(double b, unsigned n);
 
 #include "array.c"
 int array(void);
+void printElement(int a[], int size);
+double avgArr(int a[], int size);
+int minArr(int a[], int size);
+void printArr2D(int row, int col, int a[row][col]);
 
 #include "pointer.c"
 void swap(int *x, int *y);
 void reverse(int arr[], int size);
 void reverse_pointer(int *arr, int size);
-void printMatrix(int (*m)[3], int rows);
-int sumMatrix(int (*m)[3], int rows);
-void printMatrixFlatten(int (*m)[3], int rows);
-void modifyMatrix(int (*m)[3], int rows, int row, int column, int value);
+void printMatrix(int rows, int cols, int (*m)[cols]);
+int sumMatrix(int rows, int cols, int (*m)[cols]);
+void printMatrixFlatten(int rows, int cols, int (*m)[cols]);
+void modifyMatrix(int rows, int cols, int (*m)[cols], int row, int column, int value);
 int* minimum(int *a,int *b);
 void normalize(int *n, int *d);
 
@@ -70,3 +74,5 @@ unsigned gcd(unsigned a, unsigned b);
 void pattern(int n);
 void pattern_ite(int n);
 void pattern_2(unsigned n);
+int is_binary_num(unsigned n);
+int * search(int val, int a[], int a_size);

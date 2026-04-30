@@ -16,6 +16,7 @@ int isleap(int year){
     return (year%4==0 && year%100!=0 || year%400==0);
 }
 
+// return number of dates in a month, given month and year
 int daysPerMonth(int month, int year){
     if (month<0 && month>12){
         return 0;
@@ -35,6 +36,7 @@ int daysPerMonth(int month, int year){
         return 31;
 }
 
+//check if the date is valid
 int validDate(int day, int month, int year){
     if (daysPerMonth(month, year)==0 || day>daysPerMonth(month, year))
         return 0;
@@ -44,6 +46,7 @@ int validDate(int day, int month, int year){
         return 1;
 }
 
+//convert a date to its ordinal. Ex: 01/02/2026 is the 32th date of that year
 int ordinal(int day, int month, int year){
     if (!validDate(day, month, year)){
         return 0;
