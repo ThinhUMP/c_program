@@ -52,6 +52,7 @@ int main() {
     // } else {
     //     printf("Not found\n");
     // }
-    printMatrix(2, 3, matrix);
+    unsigned month=2, date=28, year=1968;
+    nextDate(&month, &date, &year);
     return 0;
 }

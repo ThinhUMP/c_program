@@ -1,3 +1,6 @@
+#ifndef IMPORT_H
+#define IMPORT_H
+
 #include "prime.c"
 int is_prime(unsigned n);
 void prime(void);
@@ -64,6 +67,7 @@ void printMatrixFlatten(int rows, int cols, int (*m)[cols]);
 void modifyMatrix(int rows, int cols, int (*m)[cols], int row, int column, int value);
 int* minimum(int *a,int *b);
 void normalize(int *n, int *d);
+void nextDate(unsigned *month, unsigned *date, unsigned *year);
 
 #include "recursive.c"
 double power_rec(double base, unsigned n);
@@ -76,3 +80,5 @@ void pattern_ite(int n);
 void pattern_2(unsigned n);
 int is_binary_num(unsigned n);
 int * search(int val, int a[], int a_size);
+
+#endif

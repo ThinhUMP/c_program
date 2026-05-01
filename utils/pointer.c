@@ -103,8 +103,28 @@ void normalize(int *n, int *d){
     printf("%d/%d \n", *n, *d);
 }
 
-#include "helper.h"
 //the next date
 void nextDate(unsigned *month, unsigned *date, unsigned *year){
-    
+    if (!validDate(*month, *date, *year)){
+        printf("The input date (%u/%u/%u) is not valid\n", *month, *date, *year);
+        return;
+    }
+
+    unsigned daysInmonth = daysPerMonth(*month, *year);
+
+    if (*date<daysInmonth){
+        (*date)++;
+    }
+    else{
+        (*date) = 1;
+
+        if (*month<12){
+            (*month)++;
+        }
+        else{
+            (*year)++;
+            *month=1;
+        } 
+    }
+    printf("The next date is %u/%u/%u\n", *month, *date, *year);
 }
