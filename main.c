@@ -42,9 +42,9 @@ int main() {
     scanf("%u", &n);
 
     printf("%f to the %u = %f\n", x, n, power_eff(x, n)); */
-    int a[] = {-9, 3, 5, 7, 9};
-    int size = 5;
-
+    int arr[] = {-9, -8, 1, 2, 3, 5, 7, 9, 11, -11, 2, 3};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    
     // int *result = search(1, a, size);
 
     // if (result != NULL) {
@@ -52,7 +52,35 @@ int main() {
     // } else {
     //     printf("Not found\n");
     // }
-    unsigned month=2, date=28, year=1968;
-    nextDate(&month, &date, &year);
+    // unsigned month=2, date=28, year=1968;
+    // nextDate(&month, &date, &year);
+    // extern int check_extern;
+    // int length=10;
+    // if (length==0){
+    //     return 0;
+    // }
+    // else{
+    //     for (int i=1;i<=length;i++){
+    //         printf("%d ", Fibonacci(i));
+    //     }
+    // }
+    // int a[]={0,1,4};
+    // int b[]={-1, 2,3,5};
+    // int size_a=sizeof(a)/sizeof(a[0]);
+    // int size_b=sizeof(b)/sizeof(b[0]);
+    // int size_c = size_a+size_b;
+    // int c[size_c];
+
+    // mergeSort(arr, size);
+    // for (int i=0; i<size;i++){
+    //     printf("%d ", arr[i]);
+    // }
+    int max=20;
+    char line[max];
+
+    int length = readLine(line, max);
+    printf("%s\n", line);
+    printf("%d", length);
+
     return 0;
 }

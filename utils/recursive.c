@@ -131,3 +131,48 @@ int * search(int val, int a[], int size){
         return search(val, a + mid + 1, size - mid - 1);
     }
 }
+
+//PRACTICES FROM COURSE 4
+//Write a function using a static variable counter
+
+int counter(){
+    static int count=0;
+    count++;
+    return count;
+}
+
+//Use extern to share a variable across two files
+int check_extern=5;
+
+//Trace stack execution of nested functions
+void printC(){
+    printf("-----C-----\n");
+    printf("-----C-----\n");
+}
+
+void printB(){
+    printf("-----B-----\n");
+    printC();
+    printf("-----B-----\n");
+}
+
+void printA(){
+    printf("-----A-----\n");
+    printB();
+    printf("-----A-----\n");
+}
+
+//Implement Fibonacci(n) recursively (careful! the trivial solution is ineﬃcient)
+/*
+Base case n=1, F(1)=1;
+Base case n=2, F(2)=1;
+Recursive: F(n) = F(n-1)+F(n-2)
+*/
+int Fibonacci(int n){
+    if (n==1 || n==2){
+        return 1;
+    }
+    else{
+        return Fibonacci(n-1)+Fibonacci(n-2);
+    }
+}

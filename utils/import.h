@@ -56,6 +56,12 @@ void printElement(int a[], int size);
 double avgArr(int a[], int size);
 int minArr(int a[], int size);
 void printArr2D(int row, int col, int a[row][col]);
+ModeGrade mode_grade();
+void sortArr(int arr[], int size);
+void guessing(int arr[], int size);
+void merge(int a[], int size_a, int b[], int size_b, int c[]);
+void mergeSort(int arr[], int size);
+int readLine(char line[], int max);
 
 #include "pointer.c"
 void swap(int *x, int *y);
@@ -80,5 +86,9 @@ void pattern_ite(int n);
 void pattern_2(unsigned n);
 int is_binary_num(unsigned n);
 int * search(int val, int a[], int a_size);
+int counter();
+void printA();
+int Fibonacci(int n);
+
 
 #endif
