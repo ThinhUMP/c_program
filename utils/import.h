@@ -56,12 +56,22 @@ void printElement(int a[], int size);
 double avgArr(int a[], int size);
 int minArr(int a[], int size);
 void printArr2D(int row, int col, int a[row][col]);
-ModeGrade mode_grade();
+void mode_grade();
 void sortArr(int arr[], int size);
 void guessing(int arr[], int size);
 void merge(int a[], int size_a, int b[], int size_b, int c[]);
 void mergeSort(int arr[], int size);
 int readLine(char line[], int max);
+_Bool palyndrome(char *s);
+int extractInt(char *s);
+int is_digit(char c);
+int myStrcmp(char *s1, char *s2);
+int countwords(char s[]);
+char *firstOccurrence(char *s1, char *s2);
+int replaceall(char *s1, char a, char b);
+void baseCon(int n, int b);
+void freq_letter(char *s, int freq_alpha[26]);
+int anagrams();
 
 #include "pointer.c"
 void swap(int *x, int *y);

@@ -75,12 +75,9 @@ int main() {
     // for (int i=0; i<size;i++){
     //     printf("%d ", arr[i]);
     // }
-    int max=20;
-    char line[max];
-
-    int length = readLine(line, max);
-    printf("%s\n", line);
-    printf("%d", length);
+    char s1[]="reverse";
+    char s2[]="verrees";
+    printf("%d", anagrams());
 
     return 0;
 }
