@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 /* 
 Write a program that reads a word from the command line and prints it horizontally and vertically so that
@@ -29,17 +28,34 @@ engib
 */
 
 int main(int argc, char *argv[]){
-  char word[100]="";
-  strcat(word, argv[1]);
-  int len=sizeof(word)/sizeof(word[1]);
-  printf("len of word %d", len);
-  for (int i=0; i<len; i++){
-    /* for (int j=0; j<len/2; j++){
-      printf(" ");
-    } */
-    printf("%c\n", word[i]);
+  
+  if (argc != 2) {
+    printf("Usage: %s word\n", argv[0]);
+    return 1;
   }
 
-  printf("%s\n", word);
+  char *word = argv[1];
+  
+  int len=0;
+  while (word[len]!='\0'){
+    len++;
+  }
+
+  int mid=len/2;
+
+  for (int i=0; i<len; i++){
+    if (i==mid){
+      for (int j=len-1; j>=0; j--){
+        printf("%c",word[j]);
+      }
+      printf("\n");
+    }
+    else{
+      for (int j=0; j<mid; j++){
+        printf(" ");
+      }
+      printf("%c\n", word[i]);
+    }
+  }
   return 0;
 }

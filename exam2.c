@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 /* 
 Write a program that prints a monthly calendar. The program reads through the standard input
@@ -26,33 +25,19 @@ int main(){
   printf("starting day of the week : ");
   scanf("%d", &start);
 
-  printf("sun  mon  tue  wed  thu  fri  sat\n");
-  for (int i=1; i<days+1; i++){
-    if (i==1){
-      for (int j=1; j<(3+5*(start-1)); j++)
-        printf(" ");
-      printf("%d\n", i);
-    }
+  printf("  sun  mon  tue  wed  thu  fri  sat\n");
+  
+  int remain=7-start+1;
+
+  for (int i=1; i<start; i++){
+    printf("     ");
+  }
+
+  for (int day=1; day<days+1; day++){
+    printf("%5d", day);
+
+    if ((day+start-1)%7 ==0)
+      printf("\n");
   }
 }
-
-/* int main()
-{
-    int k, rmd;
-
-    printf(" Su Mo Tu We Th Fr Sa\n");
-
-    for(k = 1; k < 32; ++k) {
-         if(k == 1){
-             printf("                   %4d\n", k); 
-         }
-         else if(k % 7 == 1) {
-             printf(" %2d\n", k);
-         }
-         else {
-             printf(" %2d", k);
-         }
-    }
-    return 0;
-} */
 

@@ -27,7 +27,22 @@ an elementary polynomial composed of one term (i.e., a monomial), defined by a c
 If the initialization succeeds, i.e., the exponent doesn't exceed MAXDEGREE, it returns the pointer to the Polynomial.
 Otherwise, it returns NULL.
 */
-Polynomial * initPoly(Polynomial * p, int coeff, unsigned int exp) ;
+typedef struct{
+  int coeff[MAXDEGREE+1];
+} Polynomial;
+
+Polynomial * initPoly(Polynomial * p, int coeff, unsigned int exp){
+  if (exp>MAXDEGREE){
+    return NULL;
+  }
+
+  for (int i=0; i<=MAXDEGREE; i++){
+    p->coeff[i]=0;
+  }
+
+  p->coeff[exp]=coeff;
+  return p;
+}
 
 /*
 printPoly puts in the specified array a string describing a given polynomial,
@@ -52,20 +67,53 @@ int y = 145;
 char s[10];
 sprintf(s, "%d", y);
 */
-void printPoly(const Polynomial * p, char s[]);
+void printPoly(const Polynomial * p, char s[]){
+  char temp[30];
+  int is_zero=1;
+
+  s[0]='\0';
+
+  for (int i=0; i<=MAXDEGREE; i++){
+    if (p->coeff[i]!=0){
+      sprintf(temp, "%+dx%d", p->coeff[i], i);
+      strcat(s, temp);
+      is_zero=0;
+    }
+  }
+
+  if (is_zero==1){
+    strcpy(s, "0");
+  }
+}
 
 
 /*
 coeff returns the coefficient of the polynomial's term with the specified degree
 (returns 0 if exp is bigger than MAXDEGREE).
 */
-int coeff(const Polynomial * p, unsigned exp);
+int coeff(const Polynomial * p, unsigned exp){
+  if (exp>MAXDEGREE){
+    return 0;
+  }
+
+  return p->coeff[exp];
+}
 
 
 /*
 degree returns the polynomial's degree (the biggest exponent of non-null terms)
 */
-unsigned int degree(const Polynomial * p);
+unsigned int degree(const Polynomial * p){
+  unsigned degree;
+
+  for (int i=0; i<=MAXDEGREE; i++){
+    if (p->coeff[i]!=0){
+      degree = i;
+    }
+  }
+
+  return degree;
+}
 
 
 /*
@@ -73,7 +121,12 @@ sum makes the sum between polynomials by putting the result in the 1st argument,
 which is "overwritten" . 
 Returns the pointer to the 1st polynomial.
 */
-Polynomial * sum(Polynomial * p1, const Polynomial * p2); 
+Polynomial * sum(Polynomial * p1, const Polynomial * p2){
+  for (int i=0; i<=MAXDEGREE; i++){
+    p1->coeff[i] += p2->coeff[i];
+  }
+  return p1;
+}
 
 
 /*
@@ -82,7 +135,31 @@ which is "overwritten".
 Returns the pointer to the 1st polynomial, NULL, if the sum of polynomials' degrees
 exceeds MAXDEGREE (in that case, it does nothing).
 */
-Polynomial * prod(Polynomial * p1, const Polynomial * p2); 
+Polynomial * prod(Polynomial * p1, const Polynomial * p2){
+  if (degree(p1)*degree(p2)>MAXDEGREE){
+    return NULL;
+  }
+
+  Polynomial result;
+
+  for (int i=0; i<=MAXDEGREE; i++){
+    result.coeff[i] = 0;
+  }
+
+  for (int i=0; i<=MAXDEGREE; i++){
+    for (int j=0; j<=MAXDEGREE; j++){
+      if (i+j<=MAXDEGREE){
+        result.coeff[i+j] += coeff(p1, i) * coeff(p2, j);
+      }
+    }
+  }
+
+  for (int i=0; i<=MAXDEGREE; i++){
+    p1->coeff[i] = result.coeff[i];
+  }
+
+  return p1;
+} 
 
 /*
 main performs some tests of the functions: please comment on the parts not yet implemented
